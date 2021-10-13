@@ -21,13 +21,50 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VideoCell" id="ThO-1q-PrK">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VideoCell" id="ThO-1q-PrK" customClass="VideoTableViewCell" customModule="YouTube" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="183.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ThO-1q-PrK" id="6X5-oJ-Fic">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="183.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2wb-7r-GZZ">
+                                                    <rect key="frame" x="20" y="20" width="374" height="163.5"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="ogX-39-ato">
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="102"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="ogX-39-ato" secondAttribute="height" multiplier="1280:720" id="bUj-Dh-cQy"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="STB-85-5jA">
+                                                            <rect key="frame" x="0.0" y="112" width="374" height="20.5"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HR3-Py-diB">
+                                                            <rect key="frame" x="0.0" y="142.5" width="374" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="2wb-7r-GZZ" firstAttribute="top" secondItem="6X5-oJ-Fic" secondAttribute="top" constant="20" id="LW6-zb-gbQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="2wb-7r-GZZ" secondAttribute="trailing" constant="20" id="OxO-dD-DgT"/>
+                                                <constraint firstItem="2wb-7r-GZZ" firstAttribute="leading" secondItem="6X5-oJ-Fic" secondAttribute="leading" constant="20" id="mWf-ve-cZf"/>
+                                                <constraint firstAttribute="bottom" secondItem="2wb-7r-GZZ" secondAttribute="bottom" id="pGQ-nO-o0X"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="HR3-Py-diB" id="xvN-ab-swg"/>
+                                            <outlet property="thumbnailImageView" destination="ogX-39-ato" id="u6w-fU-val"/>
+                                            <outlet property="titleLabel" destination="STB-85-5jA" id="CPa-vl-j8G"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
